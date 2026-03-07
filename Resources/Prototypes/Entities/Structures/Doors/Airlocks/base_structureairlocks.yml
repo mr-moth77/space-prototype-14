@@ -4,6 +4,9 @@
   name: airlock
   description: It opens, it closes, and maybe crushes you.
   components:
+  - type: IconSmooth # SP14-Changes
+    key: walls
+    mode: NoSprite
   - type: Anchorable
     flags:
     - Anchorable

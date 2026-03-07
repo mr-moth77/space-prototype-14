@@ -108,7 +108,7 @@
   - type: ScaleVisuals
     scale: 0.75, 0.75
   - type: ActionGrant
-    actions: 
+    actions:
     - MilkyVomitAction
   - type: Tag
     tags:
