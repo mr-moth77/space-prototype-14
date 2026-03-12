@@ -97,6 +97,8 @@
         - FullTileMask
         layer:
         - WallLayer
+  - type: Isolation #Space Prototype change
+    isolation: 0.3
 
 - type: entity
   parent: BaseWall
@@ -654,6 +656,8 @@
         layer:
         - WallLayer
         density: 2000
+  - type: Isolation #Space Prototype change
+    isolation: 2.5
 
 - type: entity
   parent: WallReinforced
