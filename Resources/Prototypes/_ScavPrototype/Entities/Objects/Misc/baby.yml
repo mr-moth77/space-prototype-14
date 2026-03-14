@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseItem
+  id: BabyExpilky
+  name: Ребенок экспилки
+  description: Маленький черно-белый шерстяной комочек завернутые в простынь.
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Objects/Items/baby_expilky.rsi
+    state: icon
+  - type: BlockMovement
+  - type: Examiner
+  - type: DoAfter
+  - type: Actions
+  - type: Input
+    context: "human"
+
