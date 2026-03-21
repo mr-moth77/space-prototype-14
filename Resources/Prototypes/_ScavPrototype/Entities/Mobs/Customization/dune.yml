@@ -54,3 +54,15 @@
   sprites:
   - sprite: _ScavPrototype/Mobs/Species/Dune/scars.rsi
     state: tail_dune_knot
+
+
+#---Раскрас
+- type: marking
+  id: DunePainting
+  bodyPart: LLeg
+  markingCategory: Overlay
+  forcedColoring: true
+  speciesRestriction: [Dune]
+  sprites:
+  - sprite: _ScavPrototype/Mobs/Species/Dune/misc.rsi
+    state: dune_painting
