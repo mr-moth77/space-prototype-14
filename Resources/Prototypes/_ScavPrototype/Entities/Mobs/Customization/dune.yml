@@ -66,3 +66,13 @@
   sprites:
   - sprite: _ScavPrototype/Mobs/Species/Dune/misc.rsi
     state: dune_painting
+
+- type: marking
+  id: DuneTailPainted
+  bodyPart: Tail
+  markingCategory: Overlay
+  forcedColoring: true
+  speciesRestriction: [Dune]
+  sprites:
+  - sprite: _ScavPrototype/Mobs/Species/Dune/misc.rsi
+    state: dune_painting_tail

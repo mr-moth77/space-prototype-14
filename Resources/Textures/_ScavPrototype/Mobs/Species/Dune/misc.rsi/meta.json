@@ -10,6 +10,10 @@
         {
             "name": "dune_painting",
             "directions": 4
+        },
+        {
+            "name": "dune_painting_tail",
+            "directions": 4
         }
     ]
 }
