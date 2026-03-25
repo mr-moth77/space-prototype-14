@@ -1,48 +1,19 @@
 - type: entity
   save: false
   parent: BaseMobSpeciesOrganic
-  id: MobDune
-  name: Урист МакЗубастик
+  id: MobVelvet
+  name: Урист МакПаучёк
   components:
-  - type: Biter
-    biteTypes:
-      Normal:
-        biteTime: 2
-        transferAmount: 8
-        hungerAmount: 5
-        damage:
-          types:
-            Slash: 8
-        biteSound:
-          collection: eating
-      Strong:
-        biteTime: 3.5
-        transferAmount: 20
-        hungerAmount: 15
-        damage:
-          types:
-            Slash: 25
-        biteSound:
-          collection: eating
-      Dead:
-        biteTime: 6
-        transferAmount: 40
-        hungerAmount: 30
-        damage:
-          types:
-            Slash: 50
-        biteSound:
-          path: /Audio/Effects/demon_consume.ogg
   - type: Icon
-    sprite: _ScavPrototype/Mobs/Species/Dune/parts.rsi
+    sprite: _ScavPrototype/Mobs/Species/Velvet/parts.rsi
     state: full
   - type: HumanoidAppearance
-    species: Dune
+    species: Velvet
     hideLayersOnEquip:
     - HeadTop
     - HeadSide
   - type: Body
-    prototype: Dune
+    prototype: Velvet
   - type: Vocal
     sounds:
       Male: MaleSpeciman
@@ -51,6 +22,10 @@
   - type: Speech
     speechSounds: MaleSpeciman
     allowedEmotes: [ 'Bark', 'Growl' ]
+  - type: Sericulture
+    productionLength: 3
+    entityProduced: MaterialWebSilk1
+    hungerCost: 5
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -68,8 +43,8 @@
     damage:
       types:
         Piercing: 4
-        Slash: 7
-        Structural: 10
+        Slash: 5
+        Structural: 8
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -77,19 +52,19 @@
       220: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      80: 0.7
-      100: 0.5
+      60: 0.7
+      80: 0.5
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
       - ReagentId: YellowBlood
-        Quantity: 320
+        Quantity: 350
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Speciman
   - type: Temperature
     heatDamageThreshold: 335
-    coldDamageThreshold: 260
+    coldDamageThreshold: 240
     currentTemperature: 310.15
     specificHeat: 42
     coldDamage:
@@ -100,32 +75,32 @@
         Heat: 1.5 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      293: 0.85
-      280: 0.75
-      260: 0.65
+      273: 0.85
+      260: 0.75
+      240: 0.65
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 20
+    damageCap: 110
     damage:
       types:
-        Heat: -0.03
-        Cold: -0.02
-        Shock: -0.01
+        Heat: -0.05
+        Cold: -0.06
+        Shock: -0.03
       groups:
-        Brute: -0.04
-        Toxin: -0.02
+        Brute: -0.08
+        Toxin: -0.05
   - type: Stamina
     baseCritThreshold: 120
     decay: 4
   - type: Hunger
-    baseDecayRate: 0.045
+    baseDecayRate: 0.043
     starvationDamage:
       types:
         Bloodloss: 0.7
         Cold: 0.05
   - type: Thirst
-    baseDecayRate: 0.22
+    baseDecayRate: 0.2
   - type: Tag
     tags:
     - FootstepSound
@@ -134,7 +109,7 @@
     - AnomalyHost
   - type: Sharp
   - type: Inventory
-    speciesId: Dune
+    speciesId: Velvet
     templateId: speciman
     displacements:
       jumpsuit:
@@ -165,28 +140,8 @@
 
 - type: entity
   parent: BaseSpeciesDummy
-  id: MobDuneDummy
+  id: MobVelvetDummy
   categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
-    species: Dune
-
-- type: entity
-  parent: BaseAction
-  id: DuneBiteAction
-  name: "[color=red]Укусить[/color]"
-  description: Откусите от кого-то кусочек.
-  components:
-  - type: Action
-    icon: { sprite : _ScavPrototype/Mobs/Species/Dune/bite_action.rsi, state: icon }
-    iconOn: { sprite : _ScavPrototype/Mobs/Species/Dune/bite_action.rsi, state: icon-on }
-    itemIconStyle: BigAction
-    priority: 1
-    useDelay: 5
-  - type: TargetAction
-  - type: EntityTargetAction
-    canTargetSelf: false
-    whitelist:
-      components:
-      - MobState
-    event: !type:BiteActionEvent
+    species: Velvet

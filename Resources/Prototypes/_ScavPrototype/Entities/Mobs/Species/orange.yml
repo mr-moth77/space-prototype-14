@@ -7,6 +7,8 @@
   - type: Icon
     sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
     state: full
+  - type: ScaleVisuals
+    scale: 1.1, 1.1
   - type: HumanoidAppearance
     species: Orange
     hideLayersOnEquip:
@@ -78,7 +80,7 @@
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 100
+    damageCap: 130
     damage:
       types:
         Heat: -0.05
@@ -101,7 +103,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.35
+          radius: 0.38
         density: 200
         restitution: 0.0
         mask:
