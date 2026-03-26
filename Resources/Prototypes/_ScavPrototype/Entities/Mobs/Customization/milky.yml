@@ -119,13 +119,13 @@
 
 
 #--------Специальное
-- type: marking
-  id: MilkyPregnantBelly
-  bodyPart: HeadTop
-  markingCategory: Overlay
-  forcedColoring: true
-  followSkinColor: true
-  speciesRestriction: [Milky]
-  sprites:
-  - sprite: _ScavPrototype/Mobs/Species/Milky/milky_parts.rsi
-    state: pregnant_belly
+#- type: marking
+#  id: MilkyPregnantBelly
+#  bodyPart: HeadTop
+#  markingCategory: Overlay
+#  forcedColoring: true
+#  followSkinColor: true
+#  speciesRestriction: [Milky]
+#  sprites:
+#  - sprite: _ScavPrototype/Mobs/Species/Milky/milky_parts.rsi
+#    state: pregnant_belly

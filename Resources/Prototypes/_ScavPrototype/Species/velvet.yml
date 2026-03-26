@@ -74,7 +74,7 @@
     Chest:
       points: 1
       required: false
-      defaultMarkings: [ VelvetFinBase ]
+      defaultMarkings: [ VelvetBacklegsBase ]
     Legs:
       points: 2
       required: false

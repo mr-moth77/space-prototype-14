@@ -32,7 +32,7 @@
     state: eyes
 
 - type: marking
-  id: VelvetFinBase
+  id: VelvetBacklegsBase
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
@@ -40,92 +40,4 @@
   speciesRestriction: [Velvet]
   sprites:
   - sprite: _ScavPrototype/Mobs/Species/Velvet/velvet_parts.rsi
-    state: fin_velvetbase
-
-#--------Шрамы
-- type: marking
-  id: VelvetEarScarRight
-  bodyPart: HeadSide
-  markingCategory: HeadSide
-  forcedColoring: true
-  followSkinColor: true
-  speciesRestriction: [Velvet]
-  sprites:
-  - sprite: _ScavPrototype/Mobs/Species/Velvet/scars.rsi
-    state: velvet_ears_scar_right
-
-- type: marking
-  id: VelvetEarScarLeft
-  bodyPart: HeadSide
-  markingCategory: HeadSide
-  forcedColoring: true
-  followSkinColor: true
-  speciesRestriction: [Velvet]
-  sprites:
-  - sprite: _ScavPrototype/Mobs/Species/Velvet/scars.rsi
-    state: velvet_ears_scar_left
-
-- type: marking
-  id: VelvetScarChestDiagonal
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Velvet]
-  forcedColoring: true
-  sprites:
-  - sprite: _ScavPrototype/Mobs/Species/Velvet/scars.rsi
-    state: scar_chest_diagonal
-
-- type: marking
-  id: VelvetScarChestVertical
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Velvet]
-  forcedColoring: true
-  sprites:
-  - sprite: _ScavPrototype/Mobs/Species/Velvet/scars.rsi
-    state: scar_chest_vertical
-
-- type: marking
-  id: VelvetScarLeftEye
-  bodyPart: HeadTop
-  markingCategory: Overlay
-  speciesRestriction: [Velvet]
-  forcedColoring: true
-  sprites:
-  - sprite: _ScavPrototype/Mobs/Species/Velvet/scars.rsi
-    state: scar_lefteye
-
-- type: marking
-  id: VelvetScarRightEye
-  bodyPart: HeadTop
-  markingCategory: Overlay
-  speciesRestriction: [Velvet]
-  forcedColoring: true
-  sprites:
-  - sprite: _ScavPrototype/Mobs/Species/Velvet/scars.rsi
-    state: scar_righteye
-
-#--------Хвосты
-- type: marking
-  id: VelvetTailTorn
-  bodyPart: Tail
-  markingCategory: Tail
-  forcedColoring: true
-  followSkinColor: true
-  speciesRestriction: [Velvet]
-  sprites:
-  - sprite: _ScavPrototype/Mobs/Species/Velvet/tails.rsi
-    state: torn_tail
-
-
-#--------Специальное
-- type: marking
-  id: VelvetPregnantBelly
-  bodyPart: HeadTop
-  markingCategory: Overlay
-  forcedColoring: true
-  followSkinColor: true
-  speciesRestriction: [Velvet]
-  sprites:
-  - sprite: _ScavPrototype/Mobs/Species/Velvet/velvet_parts.rsi
-    state: pregnant_belly
+    state: backlegs_velvetbase

@@ -4,9 +4,6 @@
   id: MobVelvet
   name: Урист МакПаучёк
   components:
-  - type: Icon
-    sprite: _ScavPrototype/Mobs/Species/Velvet/parts.rsi
-    state: full
   - type: HumanoidAppearance
     species: Velvet
     hideLayersOnEquip:
@@ -23,7 +20,7 @@
     speechSounds: MaleSpeciman
     allowedEmotes: [ 'Bark', 'Growl' ]
   - type: Sericulture
-    productionLength: 3
+    productionLength: 6
     entityProduced: MaterialWebSilk1
     hungerCost: 5
   - type: Butcherable
@@ -106,6 +103,7 @@
     - FootstepSound
     - DoorBumpOpener
     - SpecimanCraft
+    - SpiderCraft
     - AnomalyHost
   - type: Sharp
   - type: Inventory
