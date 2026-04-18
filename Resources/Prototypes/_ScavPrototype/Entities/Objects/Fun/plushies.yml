@@ -62,3 +62,36 @@
     sprite: _ScavPrototype/Objects/Fun/albino_plushie.rsi
     slots:
     - HEAD
+
+- type: entity
+  parent: PlushieExperiment
+  id: PlushieDune
+  name: плюшевая дюна
+  description: Милая пушистая плюшка страшного зубастого создания.
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Objects/Fun/dune_plushie.rsi
+  - type: Item
+    sprite: _ScavPrototype/Objects/Fun/dune_plushie.rsi
+  - type: EmitSoundOnUse
+    sound: &PlushieDuneSound
+      path: /Audio/_ScavPrototype/Voices/Speciman/speciman_growl.wav
+      params:
+        volume: -6
+        pitch: 2
+  - type: EmitSoundOnLand
+    sound: *PlushieDuneSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieDuneSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieDuneSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieDuneSound
+  - type: Edible
+    useSound: *PlushieDuneSound
+  - type: MeleeWeapon
+    soundHit: *PlushieDuneSound
+  - type: Clothing
+    sprite: _ScavPrototype/Objects/Fun/dune_plushie.rsi
+    slots:
+    - HEAD
