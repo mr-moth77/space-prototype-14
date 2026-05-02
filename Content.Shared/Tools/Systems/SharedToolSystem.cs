@@ -204,7 +204,6 @@ public abstract partial class SharedToolSystem : EntitySystem
             return false;
 
         //Space Prototype changes start
-
         if (!CanStartToolUse(tool, user, target, fuel, qualitiesNeeded, toolComponent))
             return false;
         //Space Prototype changes end
@@ -323,7 +322,7 @@ public abstract partial class SharedToolSystem : EntitySystem
                 return false;
         }
 
-        if (toolComponent.EnergyTool && _powerCell.HasCharge(tool, toolComponent.ChargeUse, user: user))
+        if (toolComponent.EnergyTool && !_powerCell.HasCharge(tool, toolComponent.ChargeUse, user: user))
             return false;
         //Space Prototype changes end
 
