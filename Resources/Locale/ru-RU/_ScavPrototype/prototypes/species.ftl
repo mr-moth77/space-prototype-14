@@ -5,3 +5,4 @@ species-name-bold-milky = Лысый милки
 species-name-dune = Дюна
 species-name-orange = Орандж
 species-name-velvet = Вельвет
+species-name-roza = Роза

@@ -1,19 +1,16 @@
 - type: entity
   save: false
   parent: BaseMobSpeciesOrganic
-  id: MobSpeciman
-  name: Урист МакОбразец
+  id: MobRoza
+  name: Урист МакЛедышка
   components:
-  - type: Icon
-    sprite: _ScavPrototype/Mobs/Species/Speciman/parts.rsi
-    state: full
   - type: HumanoidAppearance
-    species: Speciman
+    species: Roza
     hideLayersOnEquip:
     - HeadTop
     - HeadSide
   - type: Body
-    prototype: Speciman
+    prototype: Roza
   - type: Vocal
     sounds:
       Male: MaleSpeciman
@@ -39,8 +36,14 @@
     damage:
       types:
         Piercing: 3
-        Slash: 5
+        Slash: 4
         Structural: 7
+        Cold: 2
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
@@ -51,8 +54,8 @@
     damageModifierSet: Speciman
   - type: Temperature
     heatDamageThreshold: 335
-    coldDamageThreshold: 240
-    currentTemperature: 310.15
+    coldDamageThreshold: 200
+    currentTemperature: 290.15
     specificHeat: 42
     coldDamage:
       types:
@@ -62,9 +65,9 @@
         Heat: 1.5 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      283: 0.85
-      270: 0.75
-      250: 0.65
+      223: 0.85
+      210: 0.75
+      200: 0.65
   - type: PassiveDamage
     allowedStates:
     - Alive
@@ -72,7 +75,7 @@
     damage:
       types:
         Heat: -0.05
-        Cold: -0.06
+        Cold: -0.12
         Shock: -0.03
       groups:
         Brute: -0.08
@@ -85,33 +88,15 @@
         Cold: 0.05
   - type: Thirst
     baseDecayRate: 0.2
-  - type: ScaleVisuals
-    scale: 0.875, 0.875
   - type: Tag
     tags:
     - FootstepSound
     - DoorBumpOpener
     - SpecimanCraft
     - AnomalyHost
-  - type: PointLight
-    radius: 1.4
-    energy: 0.45
-    color: "#ff8227"
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.315
-        density: 120
-        restitution: 0.0
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
   - type: Sharp
   - type: Inventory
-    speciesId: Speciman
+    speciesId: Roza
     templateId: speciman
     displacements:
       jumpsuit:
@@ -142,8 +127,8 @@
 
 - type: entity
   parent: BaseSpeciesDummy
-  id: MobSpecimanDummy
+  id: MobRozaDummy
   categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
-    species: Speciman
+    species: Roza
