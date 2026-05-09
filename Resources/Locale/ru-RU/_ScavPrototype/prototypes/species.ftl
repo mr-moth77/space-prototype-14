@@ -6,3 +6,4 @@ species-name-dune = Дюна
 species-name-orange = Орандж
 species-name-velvet = Вельвет
 species-name-roza = Роза
+species-name-voyager = Вояджер
