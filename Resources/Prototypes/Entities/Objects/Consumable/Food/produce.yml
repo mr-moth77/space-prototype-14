@@ -1592,7 +1592,9 @@
         - ReagentId: Nutriment
           Quantity: 2
         - ReagentId: Bicaridine
-          Quantity: 20
+          Quantity: 18
+        - ReagentId: Opium
+          Quantity: 2
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/poppy.rsi
   - type: Produce
