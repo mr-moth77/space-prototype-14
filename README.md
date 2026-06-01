@@ -1,5 +1,5 @@
 <div class="header" align="center">
-<img alt="Space Station 14" width="880" height="300" src="https://media.discordapp.net/attachments/956080275429933106/1436751760621572176/logo-ru.png?ex=691c9c59&is=691b4ad9&hm=3dedf88b34036b1b2c4864d41ff0d98736af92e7a726a7b6a61d65763cda10f7&=&format=webp&quality=lossless">
+<img width="224" height="214" alt="i" src="https://github.com/user-attachments/assets/0eb135c6-7e08-4b5a-baa3-f5bac2d88ef0" />
 </div>
 
 Space Station 14 это ремейк SS13, который работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
