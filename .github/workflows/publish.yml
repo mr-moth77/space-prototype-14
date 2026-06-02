@@ -72,6 +72,9 @@ jobs:
         --platform linux-x64 \
         /p:PublishTrimmed=false /p:EnableTrimAnalyzer=false
 
+    - name: Package client
+      run: dotnet run --project Content.Packaging client --no-wipe-release
+
     - name: Upload Server Build to VPS
       uses: appleboy/scp-action@v0.1.7
       with:
