@@ -72,13 +72,13 @@ jobs:
     - name: Package client
       run: dotnet run --project Content.Packaging client --no-wipe-release
 
-    - name: Upload Server Build to VPS
+    - name: Upload Build to VPS
       uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.SERVER_IP }}
         username: root
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "release/SS14.Server_linux-x64.zip"
+        source: "release/*"
         target: "/tmp/ss14_build"
         rm: true
 
@@ -95,25 +95,19 @@ jobs:
           systemctl stop ss14-watchdog.service
           pkill -9 Robust.Server || true
           
-          mkdir -p /tmp/unpack_ss14
-          unzip -q -o /tmp/ss14_build/release/SS14.Server_linux-x64.zip -d /tmp/unpack_ss14/
-          
-          cp -r /tmp/unpack_ss14/* "$BIN_DIR/"
-          
-          if [ -d "$BIN_DIR/Resources/Content.Client" ]; then
-            mkdir -p "$SERVER_DIR/Content.Client"
-            cp -r "$BIN_DIR/Resources/Content.Client"/* "$SERVER_DIR/Content.Client/"
-          elif [ -d "$BIN_DIR/Content.Client" ]; then
-            mkdir -p "$SERVER_DIR/Content.Client"
-            cp -r "$BIN_DIR/Content.Client"/* "$SERVER_DIR/Content.Client/"
+          if [ -f /tmp/ss14_build/release/SS14.Server_linux-x64.zip ]; then
+            mkdir -p /tmp/unpack_server
+            unzip -q -o /tmp/ss14_build/release/SS14.Server_linux-x64.zip -d /tmp/unpack_server/
+            cp -r /tmp/unpack_server/* "$BIN_DIR/"
+            rm -rf /tmp/unpack_server
           fi
           
-          if [ -f "$BIN_DIR/Content.Server/Content.Server.dll" ]; then
-            cp "$BIN_DIR/Content.Server/Content.Server.dll" "$BIN_DIR/"
+          if [ -f /tmp/ss14_build/release/SS14.Client.zip ]; then
+            mkdir -p "$SERVER_DIR/Content.Client"
+            unzip -q -o /tmp/ss14_build/release/SS14.Client.zip -d "$SERVER_DIR/Content.Client/"
           fi
           
           rm -rf /tmp/ss14_build
-          rm -rf /tmp/unpack_ss14
           
           chmod -R +x "$BIN_DIR"
           chown -R ss14:ss14 "$SERVER_DIR"
