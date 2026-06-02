@@ -16,7 +16,7 @@
 - type: radioChannel
   id: Command
   name: chat-radio-command
-  keycode: 'к' # Corvax-Localization 
+  keycode: 'к' # Corvax-Localization
   frequency: 1353
   color: "#fcdf03"
 
