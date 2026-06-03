@@ -97,6 +97,10 @@ using Content.Server.Forensics;
 using Content.Server.Popups;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
+///Canned-Scav
+using Content.Shared.Actions.Components;
+using Content.Shared.Actions.Events;
+///Canned-Scav
 using Content.Server.Stunnable;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -131,6 +135,23 @@ namespace Content.Server.Medical
 
         private readonly SoundSpecifier _vomitSound = new SoundCollectionSpecifier(VomitCollection,
             AudioParams.Default.WithVariation(0.2f).WithVolume(-4f));
+
+        ///Canned-Scav
+        public override void Initialize()
+        {
+            base.Initialize();
+            SubscribeLocalEvent<ActionsComponent, VomitActionEvent>(OnVomitAction);
+        }
+
+        private void OnVomitAction(EntityUid uid, ActionsComponent component, VomitActionEvent args)
+        {
+            if (args.Handled)
+                return;
+
+            Vomit(args.Performer);
+            args.Handled = true;
+        }
+        ///Canned-Scav
 
         /// <summary>
         /// Make an entity vomit, if they have a stomach.
