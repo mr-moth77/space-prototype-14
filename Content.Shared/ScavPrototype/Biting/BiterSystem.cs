@@ -11,11 +11,14 @@ using Content.Shared.Popups;
 using Content.Shared.Whitelist;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.CombatMode;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Random.Helpers;
-using Content.Shared.Gibbing;
+using Content.Shared.Gibbing.Components;
+using Content.Shared.Gibbing.Events;
+using Content.Shared.Gibbing.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -25,7 +28,7 @@ namespace Content.Shared.ScavPrototype.Biting;
 public sealed class BiterSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] protected readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedBloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
@@ -35,6 +38,7 @@ public sealed class BiterSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly GibbingSystem _gib = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainers = default!;
 
     public override void Initialize()
     {
@@ -125,11 +129,13 @@ public sealed class BiterSystem : EntitySystem
 
         _damageable.TryChangeDamage(target, biteEntry.Damage, origin: ent.Owner);
 
-        var (bloodReagent, _) = streamComp.BloodReferenceSolution.Contents[0];
-        var bloodInjection = new Solution(bloodReagent.Prototype, biteEntry.TransferAmount);
+        if (TryComp<BloodstreamComponent>(ent.Owner, out var attackerStream) &&
+            _solutionContainers.ResolveSolution(ent.Owner, attackerStream.BloodSolutionName, ref attackerStream.BloodSolution))
+        {
+            _solutionContainers.TryAddReagent(attackerStream.BloodSolution.Value, streamComp.BloodReagent, biteEntry.TransferAmount, out _);
+        }
 
-        _bloodstreamSystem.TryModifyBloodLevel(target, -biteEntry.TransferAmount);
-        _bloodstreamSystem.TryAddToBloodstream(ent.Owner, bloodInjection);
+        _bloodstreamSystem.TryModifyBloodLevel((target, streamComp), -biteEntry.TransferAmount);
 
         _hungerSystem.ModifyHunger(ent.Owner, biteEntry.HungerAmount);
 
@@ -141,7 +147,7 @@ public sealed class BiterSystem : EntitySystem
         if (!TryComp<ButcherableComponent>(target, out var butcherable))
             return;
 
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_gameTiming.CurTick.Value, GetNetEntity(target).Id);
+        var seed = HashCode.Combine((int)_gameTiming.CurTick.Value, GetNetEntity(target).Id);
         var rand = new System.Random(seed);
 
         var index = rand.Next(butcherable.SpawnedEntities.Count);
@@ -158,8 +164,8 @@ public sealed class BiterSystem : EntitySystem
 
         Dirty(target, butcherable);
 
-        if (butcherable.SpawnedEntities.Count == 0)
-            _gib.Gib(target, true);
+        if (butcherable.SpawnedEntities.Count == 0 && TryComp<GibbableComponent>(target, out var gibbable))
+            _gib.TryGibEntity((target, Transform(target)), (target, gibbable), GibType.Gib, GibContentsOption.Drop, out _);
     }
 
 }
