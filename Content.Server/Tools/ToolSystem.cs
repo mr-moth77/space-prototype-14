@@ -1,7 +1,7 @@
 using Content.Shared.Tools.Systems;
 //Space Prototype changes
 using Content.Server.Destructible;
-using Content.Shared.Damage.Components;
+using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Robust.Shared.Utility;
 using Content.Shared.Tools.Components;
