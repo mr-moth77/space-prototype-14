@@ -362,6 +362,8 @@ public sealed class CarryingSystem : EntitySystem
             carrier != carried.Owner &&
             // can't carry multiple people, even if you have 4 hands it will break invariants when removing carryingcomponent for first carried person
             !HasComp<CarryingComponent>(carrier) &&
+            // respect CantCarryOthers marker (legacy scav/mod behaviour)
+            !HasComp<CantCarryOthersComponent>(carrier) &&
             // can't carry someone in a locker, buckled, etc
             HasComp<MapGridComponent>(Transform(carrier).ParentUid) &&
             // no tower of spacemen or stack overflow
