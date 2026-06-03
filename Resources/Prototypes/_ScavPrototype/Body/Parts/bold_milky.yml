@@ -9,8 +9,8 @@
 
 - type: entity
   id: TorsoBoldMilky
-  name: "BoldMilky torso"
-  parent: [PartBoldMilky, BaseTorso]
+  name: "Bold Milky torso"
+  parent: [PartBoldMilky, BaseChest]
   components:
   - type: Sprite
     netsync: false

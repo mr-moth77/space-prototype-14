@@ -29,11 +29,11 @@
     spawned:
     - id: FoodYellowMeat
       amount: 6
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#FFCC00"
+#  - type: DamageVisuals
+#    damageOverlayGroups:
+#      Brute:
+#        sprite: Mobs/Effects/brute_damage.rsi
+#        color: "#FFCC00"
   - type: MeleeWeapon
     attackRate: 1.75
     soundHit:

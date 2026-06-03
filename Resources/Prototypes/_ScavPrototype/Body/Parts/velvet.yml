@@ -10,7 +10,7 @@
 - type: entity
   id: TorsoVelvet
   name: "Velvet torso"
-  parent: [PartVelvet, BaseTorso]
+  parent: [PartVelvet, BaseChest]
   components:
   - type: Sprite
     netsync: false

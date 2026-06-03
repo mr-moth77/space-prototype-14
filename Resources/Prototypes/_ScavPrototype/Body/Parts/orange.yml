@@ -10,7 +10,7 @@
 - type: entity
   id: TorsoOrange
   name: "Orange torso"
-  parent: [PartOrange, BaseTorso]
+  parent: [PartOrange, BaseChest]
   components:
   - type: Sprite
     netsync: false

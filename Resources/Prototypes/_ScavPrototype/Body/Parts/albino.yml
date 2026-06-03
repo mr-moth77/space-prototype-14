@@ -10,7 +10,7 @@
 - type: entity
   id: TorsoAlbino
   name: "Albino torso"
-  parent: [PartAlbino, BaseTorso]
+  parent: [PartAlbino, BaseChest]
   components:
   - type: Sprite
     netsync: false

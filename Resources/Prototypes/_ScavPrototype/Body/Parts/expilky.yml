@@ -10,7 +10,7 @@
 - type: entity
   id: TorsoExpilky
   name: "Expilky torso"
-  parent: [PartExpilky, BaseTorso]
+  parent: [PartExpilky, BaseChest]
   components:
   - type: Sprite
     netsync: false

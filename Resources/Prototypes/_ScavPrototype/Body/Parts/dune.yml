@@ -10,7 +10,7 @@
 - type: entity
   id: TorsoDune
   name: "Dune torso"
-  parent: [PartDune, BaseTorso]
+  parent: [PartDune, BaseChest]
   components:
   - type: Sprite
     netsync: false

@@ -10,7 +10,7 @@
 - type: entity
   id: TorsoRoza
   name: "Roza torso"
-  parent: [PartRoza, BaseTorso]
+  parent: [PartRoza, BaseChest]
   components:
   - type: Sprite
     netsync: false

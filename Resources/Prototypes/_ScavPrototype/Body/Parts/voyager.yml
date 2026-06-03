@@ -10,7 +10,7 @@
 - type: entity
   id: TorsoVoyager
   name: "Voyager torso"
-  parent: [PartVoyager, BaseTorso]
+  parent: [PartVoyager, BaseChest]
   components:
   - type: Sprite
     netsync: false

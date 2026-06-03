@@ -10,7 +10,7 @@
 - type: entity
   id: TorsoSpeciman
   name: "Speciman torso"
-  parent: [PartSpeciman, BaseTorso]
+  parent: [PartSpeciman, BaseChest]
   components:
   - type: Sprite
     netsync: false

@@ -1,28 +1,4 @@
 - type: reagent
-  id: Heroin
-  name: reagent-name-heroin
-  group: Narcotics
-  desc: reagent-desc-heroin
-  contrabandSeverity: Minor
-  flavor: bitter
-  color: "#CCCCCC"
-  physicalDesc: reagent-physical-desc-syrupy
-  metabolisms:
-    Narcotic:
-      effects:
-      - !type:AdjustReagent
-        reagent: ModerateNarcotic
-        amount: 0.6
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectSeeingRainbow
-        type: Add
-        time: 2
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: 0.5
-
-- type: reagent
   id: Dormitive
   name: reagent-name-dormitive
   group: Narcotics
@@ -55,45 +31,6 @@
       - !type:AdjustReagent
         reagent: LightNarcotic
         amount: 0.4
-
-- type: reagent
-  id: Morphine
-  name: reagent-name-morphine
-  group: Narcotics
-  desc: reagent-desc-morphine
-  flavor: bitter
-  color: "#998040"
-  physicalDesc: reagent-physical-desc-syrupy
-  metabolisms:
-    Narcotic:
-      effects:
-      - !type:AdjustReagent
-        reagent: ModerateNarcotic
-        amount: 0.4
-
-- type: reagent
-  id: Fentanyl
-  name: reagent-name-fentanyl
-  group: Narcotics
-  desc: reagent-desc-fentanyl
-  contrabandSeverity: Major
-  flavor: bitter
-  color: "#88AADD"
-  physicalDesc: reagent-physical-desc-syrupy
-  metabolisms:
-    Narcotic:
-      effects:
-      - !type:AdjustReagent
-        reagent: HardNarcotic
-        amount: 4.0
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectSeeingRainbow
-        type: Add
-        time: 4
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: 1
 
 - type: reagent
   id: DilutedFentanyl

@@ -57,7 +57,6 @@
   - type: Physics
     bodyType: Dynamic
   - type: Pullable
-  - type: GravityAffected
   - type: Tag
     tags:
       - Structure

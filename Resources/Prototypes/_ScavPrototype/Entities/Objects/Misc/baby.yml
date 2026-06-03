@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseItem, BaseControllable, MobDamageable, MobAtmosStandard, MobRespirator, MobBloodstream]
+  parent: [BaseItem, BaseMob, MobDamageable, MobAtmosStandard, MobRespirator, MobBloodstream]
   id: BabyExpilky
   name: младенец экспилки
   description: Маленький черно-белый шерстяной комочек завернутые в простынь.
