@@ -29,8 +29,7 @@ public sealed class IsolationSystem : EntitySystem
         if (length <= 0.01f) return 0f;
 
         var ray = new Ray(origin.Position, dir.Normalized());
-        List<RayCastResults> rayResults = new List<RayCastResults>();
-        _occluder.IntersectRay(rayResults, origin.MapId, ray, length);
+        var rayResults = _occluder.IntersectRayWithPredicate<object?>(origin.MapId, ray, length, null, (e, s) => false, false);
 
         if (rayResults.Count == 0) return 0f;
 
