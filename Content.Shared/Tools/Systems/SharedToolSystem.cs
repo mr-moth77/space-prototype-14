@@ -96,8 +96,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 //Space Prototype changes
 using System.Linq;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
+using Content.Shared.Damage;
 using Content.Shared.PowerCell;
 using Content.Shared.Power.Components;
 
@@ -124,7 +123,7 @@ public abstract partial class SharedToolSystem : EntitySystem
 
     //Space Prototype changes start
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private readonly SharedPowerCellSystem _powerCell = default!;
     //Space Prototype changes end
 
     public const string CutQuality = "Cutting";
