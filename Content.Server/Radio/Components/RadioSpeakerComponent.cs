@@ -39,6 +39,11 @@ public sealed partial class RadioSpeakerComponent : Component
     [DataField]
     public bool SpeakNormally;
 
+    /// Canned-Scav
+    [DataField]
+    public bool SpeakLoud;
+    /// Canned-Scav end
+
     /// <summary>
     /// Does the radio need to be on a power grid to work?
     /// </summary>
