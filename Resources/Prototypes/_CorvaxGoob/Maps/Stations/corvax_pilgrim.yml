@@ -4,7 +4,7 @@
   mapPath: /Maps/_CorvaxGoob/Stations/Pilgrim/corvax_pilgrim.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 55
+  minPlayers: 0
   stations:
     CorvaxPilgrim:
       stationProto: StandardNanotrasenStation

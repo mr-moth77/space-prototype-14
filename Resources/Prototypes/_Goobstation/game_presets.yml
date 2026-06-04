@@ -38,7 +38,7 @@
     - changeling
   name: changeling-gamemode-title
   description: changeling-gamemode-description
-  showInVote: false
+  showInVote: true
   rules:
     - Changeling
     - SubGamemodesRule
@@ -129,7 +129,7 @@
   - blab
   name: blob-title
   description: blob-description
-  showInVote: false
+  showInVote: true
   rules:
   - BlobGameMode
   - BasicStationEventScheduler
@@ -215,7 +215,7 @@
     - chaos
   name: secretplus-admeme-title
   description: secretplus-admeme-description
-  showInVote: false # 1984
+  showInVote: true
   rules:
     - SecretPlusAdmeme
 
@@ -237,7 +237,7 @@
   - ayyliens
   name: xenomorph-title
   description: xenomorph-description
-  showInVote: false
+  showInVote: true
   minPlayers: 1
   rules:
   - XenomorphsInfestationRoundstart
@@ -252,7 +252,7 @@
     - thieves
   name: oops-all-thieves-title
   description: oops-all-thieves-description
-  showInVote: false
+  showInVote: true
   rules:
   - OopsAllThieves
   - TraitorSubGamemodesRule
