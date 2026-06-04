@@ -31,8 +31,7 @@
     - Moth
     - Reptilian
     - SlimePerson
-    # Goobstation
-    # - Felinid
+    - Felinid
     - Gingerbread
     - Harpy
     - Vox
@@ -56,33 +55,23 @@
 
 
 - type: guideEntry
-  id: Albino
-  name: Альбино
-  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Albino.xml"
+  id: Arachnid
+  name: species-name-arachnid
+  text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
 
 - type: guideEntry
-  id: Dune
-  name: Дюна
-  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Dune.xml"
+  id: Diona
+  name: species-name-diona
+  text: "/ServerInfo/Guidebook/Mobs/Diona.xml"
 
 - type: guideEntry
-  id: Speciman
-  name: Эксперимент
-  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Experiment.xml"
-
-- type: guideEntry
-  id: Milky
-  name: Милки
-  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Milky.xml"
-
-- type: guideEntry
-  id: Orange
-  name: Орандж
-  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Orange.xml"
+  id: Dwarf
+  name: species-name-dwarf
+  text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
 
 - type: guideEntry
   id: Human
-  name: Человек
+  name: species-name-human
   text: "/ServerInfo/Guidebook/Mobs/Human.xml"
 
 - type: guideEntry
@@ -100,11 +89,10 @@
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
 
-# Goobstation
-#- type: guideEntry
-#  id: Felinid
-#  name: species-name-felinid
-#  text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
+- type: guideEntry
+  id: Felinid
+  name: species-name-felinid
+  text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
 
 - type: guideEntry
   id: Gingerbread
@@ -155,3 +143,29 @@
   id: Shadowkin
   name: species-name-shadowkin
   text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+
+- type: guideEntry
+  id: Speciman
+  name: Эксперимент
+  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Experiment.xml"
+
+- type: guideEntry
+  id: Milky
+  name: Милки
+  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Milky.xml"
+
+- type: guideEntry
+  id: Orange
+  name: Орандж
+  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Orange.xml"
+
+- type: guideEntry
+  id: Dune
+  name: Дюна
+  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Dune.xml"
+
+- type: guideEntry
+  id: Albino
+  name: Альбино
+  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Albino.xml"
+
