@@ -25,8 +25,13 @@
   id: VelvetEyesBase
   bodyPart: Eyes
   markingCategory: Head
-  forcedColoring: true
+  followSkinColor: false
   speciesRestriction: [Velvet]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: _ScavPrototype/Mobs/Species/Velvet/parts.rsi
     state: eyes

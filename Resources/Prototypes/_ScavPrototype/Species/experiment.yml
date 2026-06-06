@@ -33,7 +33,7 @@
     Undershirt: MobHumanoidAnyMarking
     Chest: MobSpecimanChest
     Groin: MobSpecimanGroin
-    Eyes: MobHumanoidEyes
+    Eyes: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     LArm: MobSpecimanLArm
     RArm: MobSpecimanRArm

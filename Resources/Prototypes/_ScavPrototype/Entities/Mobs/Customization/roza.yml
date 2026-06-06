@@ -14,11 +14,27 @@
   id: RozaEyesBase
   bodyPart: Eyes
   markingCategory: Head
-  forcedColoring: true
+  followSkinColor: false
   speciesRestriction: [Roza]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+    layers:
+      eyes_base:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+      eyes_eyelids:
+        type:
+          !type:SkinColoring
   sprites:
   - sprite: _ScavPrototype/Mobs/Species/Roza/parts.rsi
-    state: eyes
+    state: eyes_base
+  - sprite: _ScavPrototype/Mobs/Species/Roza/parts.rsi
+    state: eyes_pupil
+  - sprite: _ScavPrototype/Mobs/Species/Roza/parts.rsi
+    state: eyes_eyelids
 
 - type: marking
   id: RozaEarsBase

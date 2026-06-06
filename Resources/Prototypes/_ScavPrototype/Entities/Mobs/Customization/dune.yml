@@ -25,8 +25,13 @@
   id: DuneEyesBase
   bodyPart: Eyes
   markingCategory: Head
-  forcedColoring: true
+  followSkinColor: false
   speciesRestriction: [Dune]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: _ScavPrototype/Mobs/Species/Dune/parts.rsi
     state: eyes

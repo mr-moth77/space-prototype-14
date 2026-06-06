@@ -33,7 +33,7 @@
     Undershirt: MobHumanoidAnyMarking
     Chest: MobExpilkyChest
     Groin: MobExpilkyGroin
-    Eyes: MobHumanoidEyes
+    Eyes: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     LArm: MobExpilkyLArm
     RArm: MobExpilkyRArm

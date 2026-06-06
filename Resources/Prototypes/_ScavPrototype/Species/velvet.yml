@@ -29,7 +29,7 @@
     Undershirt: MobHumanoidAnyMarking
     Chest: MobVelvetChest
     Groin: MobVelvetGroin
-    Eyes: MobHumanoidEyes
+    Eyes: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     LArm: MobVelvetLArm
     RArm: MobVelvetRArm
