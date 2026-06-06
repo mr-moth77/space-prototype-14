@@ -474,9 +474,15 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
         foreach (var (woundable, component) in _woundSystem.GetAllWoundableChildren(rootPart))
         {
-            traumas.Add(GetNetEntity(woundable), FetchTraumaData(woundable, component));
-            pain.Add(GetNetEntity(woundable), FetchPainData(woundable, component));
-            bleeding.Add(_bodySystem.GetTargetBodyPart(woundable), component.Bleeds > 0);
+            // scav edit start
+            traumas.TryAdd(GetNetEntity(woundable), FetchTraumaData(woundable, component));
+            pain.TryAdd(GetNetEntity(woundable), FetchPainData(woundable, component));
+            var targetPart = _bodySystem.GetTargetBodyPart(woundable);
+            if (bleeding.TryGetValue(targetPart, out var existing))
+                bleeding[targetPart] = existing || component.Bleeds > 0;
+            else
+                bleeding[targetPart] = component.Bleeds > 0;
+            // scav edit end
         }
     }
 
@@ -487,8 +493,16 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         if (body.RootContainer.ContainedEntity is not { } rootPart)
             return bleeding;
 
+        // scav edit start
         foreach (var (woundable, component) in _woundSystem.GetAllWoundableChildren(rootPart))
-            bleeding.Add(_bodySystem.GetTargetBodyPart(woundable), component.Bleeds > 0);
+        {
+            var targetPart = _bodySystem.GetTargetBodyPart(woundable);
+            if (bleeding.TryGetValue(targetPart, out var existing))
+                bleeding[targetPart] = existing || component.Bleeds > 0;
+            else
+                bleeding[targetPart] = component.Bleeds > 0;
+        }
+        // scav edit end
 
         return bleeding;
     }

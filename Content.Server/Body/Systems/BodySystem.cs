@@ -153,7 +153,11 @@ public sealed partial class BodySystem : SharedBodySystem // Shitmed change: mad
         // TODO: Predict this probably.
         base.AddPart(bodyEnt, partEnt, slotId);
 
-        var layer = partEnt.Comp.ToHumanoidLayers();
+        // scav edit start
+        var layer = TryComp<BodyPartAppearanceComponent>(partEnt, out var appearance)
+            ? (appearance.Type ?? partEnt.Comp.ToHumanoidLayers())
+            : partEnt.Comp.ToHumanoidLayers();
+        // scav edit end
         if (layer != null)
         {
             var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
@@ -173,7 +177,11 @@ public sealed partial class BodySystem : SharedBodySystem // Shitmed change: mad
         if (!TryComp<HumanoidAppearanceComponent>(bodyEnt, out var humanoid))
             return;
 
-        var layer = partEnt.Comp.ToHumanoidLayers();
+        // scav edit start
+        var layer = TryComp<BodyPartAppearanceComponent>(partEnt, out var appearance)
+            ? (appearance.Type ?? partEnt.Comp.ToHumanoidLayers())
+            : partEnt.Comp.ToHumanoidLayers();
+        // scav edit end
 
         if (layer is null)
             return;

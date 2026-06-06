@@ -36,9 +36,15 @@ public partial class SharedBodySystem
 
     private void OnPartAppearanceStartup(EntityUid uid, BodyPartAppearanceComponent component, ComponentStartup args)
     {
-        if (!TryComp(uid, out BodyPartComponent? part)
-            || part.ToHumanoidLayers() is not { } relevantLayer)
+        // scav edit start
+        if (!TryComp(uid, out BodyPartComponent? part))
             return;
+
+        // Use the visLayers value from YAML if set (e.g. LowLArm), otherwise fall back to ToHumanoidLayers()
+        var resolvedLayer = component.Type ?? part.ToHumanoidLayers();
+        if (resolvedLayer is not { } relevantLayer)
+            return;
+        // scav edit end
 
         if (part.BaseLayerId != null)
         {
@@ -57,14 +63,15 @@ public partial class SharedBodySystem
 
         part.Species = bodyAppearance.Species;
 
-        if (customLayers.ContainsKey(component.Type))
+        // scav edit start
+        if (customLayers.ContainsKey(relevantLayer))
         {
-            component.ID = customLayers[component.Type].Id;
-            component.Color = customLayers[component.Type].Color;
+            component.ID = customLayers[relevantLayer].Id;
+            component.Color = customLayers[relevantLayer].Color;
         }
-        else if (spriteLayers.ContainsKey(component.Type))
+        else if (spriteLayers.ContainsKey(relevantLayer))
         {
-            component.ID = spriteLayers[component.Type].ID;
+            component.ID = spriteLayers[relevantLayer].ID;
             component.Color = bodyAppearance.SkinColor;
         }
         else
@@ -72,6 +79,7 @@ public partial class SharedBodySystem
             component.ID = CreateIdFromPart(bodyAppearance, relevantLayer);
             component.Color = bodyAppearance.SkinColor;
         }
+        // scav edit end
 
         // I HATE HARDCODED CHECKS I HATE HARDCODED CHECKS I HATE HARDCODED CHECKS
         if (part.PartType == BodyPartType.Head)
@@ -79,12 +87,14 @@ public partial class SharedBodySystem
 
         var markingsByLayer = new Dictionary<HumanoidVisualLayers, List<Marking>>();
 
-        foreach (var layer in HumanoidVisualLayersExtension.Sublayers(relevantLayer))
+        // scav edit start
+        foreach (var sublayer in HumanoidVisualLayersExtension.Sublayers(relevantLayer))
         {
-            var category = MarkingCategoriesConversion.FromHumanoidVisualLayers(layer);
+            var category = MarkingCategoriesConversion.FromHumanoidVisualLayers(sublayer);
             if (bodyAppearance.MarkingSet.Markings.TryGetValue(category, out var markingList))
-                markingsByLayer[layer] = markingList.Select(m => new Marking(m.MarkingId, m.MarkingColors.ToList())).ToList();
+                markingsByLayer[sublayer] = markingList.Select(m => new Marking(m.MarkingId, m.MarkingColors.ToList())).ToList();
         }
+        // scav edit end
 
         component.Markings = markingsByLayer;
         Dirty(uid, component);
@@ -152,8 +162,10 @@ public partial class SharedBodySystem
         if (!TryComp(args.Part, out partAppearance))
             partAppearance = EnsureComp<BodyPartAppearanceComponent>(args.Part);
 
-        if (partAppearance.ID != null)
-            _humanoid.SetBaseLayerId(uid, partAppearance.Type, partAppearance.ID, sync: true, bodyAppearance);
+        // scav edit start
+        if (partAppearance.ID != null && partAppearance.Type.HasValue)
+            _humanoid.SetBaseLayerId(uid, partAppearance.Type.Value, partAppearance.ID, sync: true, bodyAppearance);
+        // scav edit end
 
         UpdateAppearance(uid, partAppearance);
     }
@@ -187,10 +199,13 @@ public partial class SharedBodySystem
             _humanoid.SetLayerVisibility((target, bodyAppearance), HumanoidVisualLayers.Eyes, true);
         }
 
-        if (component.Color != null)
-            _humanoid.SetBaseLayerColor(target, component.Type, component.Color, true, bodyAppearance);
+        // scav edit start
+        if (component.Color != null && component.Type.HasValue)
+            _humanoid.SetBaseLayerColor(target, component.Type.Value, component.Color, true, bodyAppearance);
 
-        _humanoid.SetLayerVisibility((target, bodyAppearance), component.Type, true);
+        if (component.Type.HasValue)
+            _humanoid.SetLayerVisibility((target, bodyAppearance), component.Type.Value, true);
+        // scav edit end
 
         foreach (var (visualLayer, markingList) in component.Markings)
         {
@@ -209,7 +224,10 @@ public partial class SharedBodySystem
         if (!TryComp(entity, out HumanoidAppearanceComponent? bodyAppearance))
             return;
 
-        _humanoid.SetLayerVisibility(entity, component.Type, false);
+        // scav edit start
+        if (component.Type.HasValue)
+            _humanoid.SetLayerVisibility(entity, component.Type.Value, false);
+        // scav edit end
         foreach (var (visualLayer, markingList) in component.Markings)
         {
             _humanoid.SetLayerVisibility((entity, bodyAppearance), visualLayer, false);

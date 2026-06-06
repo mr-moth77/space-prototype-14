@@ -485,13 +485,59 @@ namespace Content.Shared.Damage
                 if (possibleTargets.Count == 0)
                     return null;
 
-                var chosenTarget = _LETSGOGAMBLINGEXCLAMATIONMARKEXCLAMATIONMARK.PickAndTake(possibleTargets);
+                // scav edit start
+                var chosenTargets = new List<(EntityUid Id, BodyPartComponent Component)>();
+                
+                if ((partType == BodyPartType.Arm || partType == BodyPartType.Hand) && possibleTargets.Count > 1)
+                {
+                    chosenTargets = possibleTargets;
+                }
+                else
+                {
+                    chosenTargets.Add(_LETSGOGAMBLINGEXCLAMATIONMARKEXCLAMATIONMARK.PickAndTake(possibleTargets));
+                }
 
-                if (!_damageableQuery.TryComp(chosenTarget.Id, out var partDamageable))
-                    return null;
+                var appliedDamage = new DamageSpecifier();
+                var surplusHealing = new DamageSpecifier();
+                var damagePerPart = adjustedDamage / chosenTargets.Count;
 
-                totalAppliedDamage = TryChangeDamage(chosenTarget.Id, adjustedDamage, ignoreResistances,
-                    interruptsDoAfters, partDamageable, origin, ignoreBlockers: ignoreBlockers);
+                foreach (var chosenTarget in chosenTargets)
+                {
+                    if (!_damageableQuery.TryComp(chosenTarget.Id, out var partDamageable))
+                        continue;
+
+                    var modifiedDamage = damagePerPart + surplusHealing;
+                    var partDamageResult = TryChangeDamage(chosenTarget.Id, modifiedDamage, ignoreResistances,
+                        interruptsDoAfters, partDamageable, origin, ignoreBlockers: ignoreBlockers);
+                        
+                    if (partDamageResult != null && !partDamageResult.Empty)
+                    {
+                        appliedDamage += partDamageResult;
+
+                        foreach (var (type, damageFromDict) in modifiedDamage.DamageDict)
+                        {
+                            if (damageFromDict >= 0
+                                || !partDamageResult.DamageDict.TryGetValue(type, out var damageFromResult)
+                                || damageFromResult > 0)
+                                continue;
+
+                            if (damageFromDict >= damageFromResult)
+                            {
+                                surplusHealing.DamageDict[type] = FixedPoint2.Zero;
+                            }
+                            else
+                            {
+                                if (surplusHealing.DamageDict.TryGetValue(type, out var _))
+                                    surplusHealing.DamageDict[type] = damageFromDict - damageFromResult;
+                                else
+                                    surplusHealing.DamageDict.TryAdd(type, damageFromDict - damageFromResult);
+                            }
+                        }
+                    }
+                }
+                
+                totalAppliedDamage = appliedDamage;
+                // scav edit end
             }
 
             return totalAppliedDamage;

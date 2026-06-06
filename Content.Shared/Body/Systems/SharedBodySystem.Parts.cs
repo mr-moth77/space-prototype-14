@@ -195,7 +195,9 @@ public partial class SharedBodySystem
         if (body is null)
             return;
 
-        if (TryComp(insertedUid, out BodyPartComponent? part) && slotId.Contains(PartSlotContainerIdPrefix + GetSlotFromBodyPart(part))) // Shitmed Change
+        // scav edit start
+        if (TryComp(insertedUid, out BodyPartComponent? part) && slotId.StartsWith(PartSlotContainerIdPrefix) && slotId.Contains(GetSlotFromBodyPart(part)))
+        // scav edit end
         {
             AddPart(body.Value, (insertedUid, part), slotId);
             RecursiveBodyUpdate((insertedUid, part), body.Value);
@@ -203,10 +205,12 @@ public partial class SharedBodySystem
 #if DEBUG
         else if(HasComp<BodyPartComponent>(insertedUid))
         {
+            // scav edit start
             DebugTools.Assert(
-                slotId.Contains(PartSlotContainerIdPrefix + GetSlotFromBodyPart(part)),
+                slotId.StartsWith(PartSlotContainerIdPrefix) && slotId.Contains(GetSlotFromBodyPart(part)),
                 $"BodyPartComponent has not been inserted ({Prototype(args.Entity)?.ID}) into {Prototype(ent.Comp.Body!.Value)?.ID}" +
                 $" прототип должен иметь подключение начиная с {GetSlotFromBodyPart(part)} (сейчас {slotId.Replace(PartSlotContainerIdPrefix,"")})");
+            // scav edit end
         }
 #endif
 
@@ -238,7 +242,9 @@ public partial class SharedBodySystem
 
         if (TryComp(removedUid, out BodyPartComponent? part))
         {
-            if (!slotId.Contains(PartSlotContainerIdPrefix + GetSlotFromBodyPart(part)))
+            // scav edit start
+            if (!slotId.StartsWith(PartSlotContainerIdPrefix) || !slotId.Contains(GetSlotFromBodyPart(part)))
+            // scav edit end
                 return;
 
             DebugTools.Assert(part.Body == ent.Comp.Body);

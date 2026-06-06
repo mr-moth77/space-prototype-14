@@ -26,6 +26,26 @@
   - type: Icon
     sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
     state: "chest_m"
+  - type: BodyPart
+    children:
+      groin:
+        id: groin
+        type: Groin
+      right arm:
+        id: right arm
+        type: Arm
+      left arm:
+        id: left arm
+        type: Arm
+      head:
+        id: head
+        type: Head
+      low right arm:
+        id: low right arm
+        type: Arm
+      low left arm:
+        id: low left arm
+        type: Arm
 
 - type: entity
   id: GroinOrange
@@ -169,6 +189,14 @@
   - type: Icon
     sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
     state: "low_l_arm"
+  - type: BodyPart
+    toolName: "a low left arm"
+    children:
+      low left hand:
+        id: low left hand
+        type: Hand
+  - type: BodyPartAppearance
+    visLayers: LowLArm
 
 - type: entity
   id: LowRightArmOrange
@@ -182,6 +210,14 @@
   - type: Icon
     sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
     state: "low_r_arm"
+  - type: BodyPart
+    toolName: "a low right arm"
+    children:
+      low right hand:
+        id: low right hand
+        type: Hand
+  - type: BodyPartAppearance
+    visLayers: LowRArm
 
 - type: entity
   id: LowLeftHandOrange
@@ -195,6 +231,10 @@
   - type: Icon
     sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
     state: "low_l_hand"
+  - type: BodyPart
+    toolName: "a low left hand"
+  - type: BodyPartAppearance
+    visLayers: LowLHand
 
 - type: entity
   id: LowRightHandOrange
@@ -208,3 +248,7 @@
   - type: Icon
     sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
     state: "low_r_hand"
+  - type: BodyPart
+    toolName: "a low right hand"
+  - type: BodyPartAppearance
+    visLayers: LowRHand

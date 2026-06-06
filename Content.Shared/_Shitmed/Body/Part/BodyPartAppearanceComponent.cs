@@ -21,7 +21,9 @@ public sealed partial class BodyPartAppearanceComponent : Component
     ///     HumanoidVisualLayer type for this body part.
     /// </summary>
     [DataField("visLayers"), AutoNetworkedField] // Goobstation - added visLayers
-    public HumanoidVisualLayers Type { get; set; }
+    // scav edit start
+    public HumanoidVisualLayers? Type;
+    // scav edit end
 
     /// <summary>
     ///     Relevant markings for this body part that will be applied on attachment.

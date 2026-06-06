@@ -53,6 +53,12 @@ namespace Content.Shared.Humanoid
         RHand,
 
         LHand,
+        // scav edit start
+        LowLArm,
+        LowRArm,
+        LowLHand,
+        LowRHand,
+        // scav edit end
         RLeg,
         LLeg,
         RFoot,

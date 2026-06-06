@@ -77,11 +77,11 @@ namespace Content.Shared.Humanoid
                     yield return HumanoidVisualLayers.RLeg;
                     yield return HumanoidVisualLayers.RFoot;
                     break;
+                // Shitmed Change Start
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;
                     yield return HumanoidVisualLayers.Wings; // for IPC wings port from SimpleStation
                     yield return HumanoidVisualLayers.Tail;
-                // Shitmed Change Start
                     yield return HumanoidVisualLayers.Groin;
                     break;
                 case HumanoidVisualLayers.Groin:
@@ -100,6 +100,22 @@ namespace Content.Shared.Humanoid
                 case HumanoidVisualLayers.RFoot:
                     yield return HumanoidVisualLayers.RFoot;
                     break;
+                // scav edit start
+                case HumanoidVisualLayers.LowLArm:
+                    yield return HumanoidVisualLayers.LowLArm;
+                    yield return HumanoidVisualLayers.LowLHand;
+                    break;
+                case HumanoidVisualLayers.LowRArm:
+                    yield return HumanoidVisualLayers.LowRArm;
+                    yield return HumanoidVisualLayers.LowRHand;
+                    break;
+                case HumanoidVisualLayers.LowLHand:
+                    yield return HumanoidVisualLayers.LowLHand;
+                    break;
+                case HumanoidVisualLayers.LowRHand:
+                    yield return HumanoidVisualLayers.LowRHand;
+                    break;
+                // scav edit end
                 // Shitmed Change End
                 default:
                     yield break;

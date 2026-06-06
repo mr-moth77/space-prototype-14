@@ -22,12 +22,12 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Popups;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Standing;
-using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
@@ -873,7 +873,9 @@ public sealed partial class WoundSystem
                 }*/
                 // Goobstation end
 
-                _body.DetachPart(parentWoundableEntity, bodyPartId.Remove(0, 15), woundableEntity);
+                // scav edit start
+                _body.DetachPart(parentWoundableEntity, bodyPartId.Remove(0, Content.Shared.Body.Systems.SharedBodySystem.PartSlotContainerIdPrefix.Length), woundableEntity);
+                // scav edit end
                 DestroyWoundableChildren(woundableEntity, woundableComp);
 
 
@@ -1007,7 +1009,9 @@ public sealed partial class WoundSystem
 
         // Still does the funny popping, if the children are critted. for the funny :3
         DestroyWoundableChildren(woundableEntity, woundableComp, amputateChildrenSafely);
-        _body.DetachPart(parentWoundableEntity, bodyPartId.Remove(0, 15), woundableEntity);
+        // scav edit start
+        _body.DetachPart(parentWoundableEntity, bodyPartId.Remove(0, Content.Shared.Body.Systems.SharedBodySystem.PartSlotContainerIdPrefix.Length), woundableEntity);
+        // scav edit end
     }
 
     #endregion

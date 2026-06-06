@@ -70,6 +70,12 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.LArm => MarkingCategories.LeftArm,
                 HumanoidVisualLayers.RHand => MarkingCategories.RightHand,
                 HumanoidVisualLayers.LHand => MarkingCategories.LeftHand,
+                // scav edit start
+                HumanoidVisualLayers.LowLArm => MarkingCategories.LeftArm,
+                HumanoidVisualLayers.LowRArm => MarkingCategories.RightArm,
+                HumanoidVisualLayers.LowLHand => MarkingCategories.LeftHand,
+                HumanoidVisualLayers.LowRHand => MarkingCategories.RightHand,
+                // scav edit end
                 HumanoidVisualLayers.LLeg => MarkingCategories.LeftLeg,
                 HumanoidVisualLayers.RLeg => MarkingCategories.RightLeg,
                 HumanoidVisualLayers.LFoot => MarkingCategories.LeftFoot,

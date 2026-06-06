@@ -35,6 +35,10 @@
     RArm: MobOrangeRArm
     LHand: MobOrangeLHand
     RHand: MobOrangeRHand
+    LowLArm: MobOrangeLowLArm
+    LowRArm: MobOrangeLowRArm
+    LowLHand: MobOrangeLowLHand
+    LowRHand: MobOrangeLowRHand
     LLeg: MobOrangeLLeg
     RLeg: MobOrangeRLeg
     LFoot: MobOrangeLFoot
@@ -82,7 +86,6 @@
     Underwear:
       points: 1
       required: false
-      defaultMarkings: [ OrangeLowArmsBase ]
     Undershirt:
       points: 1
       required: false
@@ -212,3 +215,27 @@
   baseSprite:
     sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
     state: r_foot
+
+- type: humanoidBaseSprite
+  id: MobOrangeLowLArm
+  baseSprite:
+    sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
+    state: low_l_arm
+
+- type: humanoidBaseSprite
+  id: MobOrangeLowRArm
+  baseSprite:
+    sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
+    state: low_r_arm
+
+- type: humanoidBaseSprite
+  id: MobOrangeLowLHand
+  baseSprite:
+    sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
+    state: low_l_hand
+
+- type: humanoidBaseSprite
+  id: MobOrangeLowRHand
+  baseSprite:
+    sprite: _ScavPrototype/Mobs/Species/Orange/parts.rsi
+    state: low_r_hand
