@@ -1,0 +1,47 @@
+# Surgery steps for Scav Health Monitor implant
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertScavImplant
+  name: Add Scav implant
+
+# Surgery to open chest cavity slot for Scav implant
+- type: entity
+  parent: SurgeryOpenCavityBase
+  id: SurgeryOpenChestScavImplant
+  name: Подготовить полость груди для импланта Scav
+  components:
+  - type: SurgeryPartCondition
+    parts: [ Chest ]
+  - type: SurgeryOrganSlotCondition
+    organSlot: scavImplant
+
+# Surgery to insert Scav implant
+- type: entity
+  parent: SurgeryInstallAugmentBase
+  id: SurgeryInsertChestScavImplant
+  name: Вживить имплант жизнеобеспечения Scav в грудь
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertScavImplant
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    parts: [ Chest ]
+  - type: SurgeryOrganCondition
+    organ:
+    - type: ScavImplant
+  - type: SurgeryOrganSlotCondition
+    organSlot: scavImplant
+
+# Surgery to remove Scav implant
+- type: entity
+  parent: SurgeryRemoveAugmentBase
+  id: SurgeryRemoveChestScavImplant
+  name: Извлечь имплант жизнеобеспечения Scav из груди
+  components:
+  - type: SurgeryPartCondition
+    parts: [ Chest ]
+  - type: SurgeryOrganCondition
+    organ:
+    - type: ScavImplant

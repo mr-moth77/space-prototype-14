@@ -221,6 +221,18 @@ public sealed partial class SpeciesPrototype : IPrototype
     public float AverageWidth = 40f;
 
     // end Goobstation: port EE height/width sliders
+
+    /// <summary>
+    ///     Minimum randomized height shown in Scav implant.
+    /// </summary>
+    [DataField]
+    public int MinScavHeight = 150;
+
+    /// <summary>
+    ///     Maximum randomized height shown in Scav implant.
+    /// </summary>
+    [DataField]
+    public int MaxScavHeight = 190;
 }
 
 public enum SpeciesNaming : byte

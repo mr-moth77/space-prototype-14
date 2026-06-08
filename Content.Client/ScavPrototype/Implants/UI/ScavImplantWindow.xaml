@@ -1,0 +1,47 @@
+<implant:ScavImplantWindow
+    xmlns="https://spacestation14.io"
+    xmlns:implant="clr-namespace:Content.Client.ScavPrototype.Implants.UI"
+    Resizable="False"
+    MinWidth="318"
+    MinHeight="542"
+    MouseFilter="Stop">
+    <LayoutContainer Name="MainLayout" HorizontalExpand="True" VerticalExpand="True" MouseFilter="Ignore">
+        <!-- Background frame -->
+        <TextureRect Name="BackgroundFrame" TextureScale="2 2" Stretch="Scale" MouseFilter="Ignore"/>
+        
+        <!-- Screen container aligned precisely over the CRT screen area of the monitor -->
+        <LayoutContainer Name="ScreenContainer" MouseFilter="Ignore">
+            <!-- Screen Static Overlay -->
+            <TextureRect Name="ScreenOverlay" TextureScale="2 2" Stretch="Scale" MouseFilter="Ignore"/>
+            
+            <!-- Dynamic elements overlaying the screen static grid -->
+            <ProgressBar Name="BrainHealthBar" Value="100" MinHeight="8" MaxHeight="8"/>
+            
+            <Label Name="BrainHealthText" FontColorOverride="#18E298"/>
+            <Label Name="TotalHealthText" FontColorOverride="#18E298"/>
+            <Label Name="BloodText" FontColorOverride="#18E298"/>
+            <TextureRect Name="BleedingWarningIcon" SetSize="16 16" Stretch="KeepAspectCentered" Visible="False"/>
+            <Label Name="PainText" FontColorOverride="#18E298"/>
+            
+            <Label Name="TemperatureText" FontColorOverride="#18E298"/>
+            
+            <ProgressBar Name="ThirstBar" Value="100" MinHeight="6" MaxHeight="6"/>
+            
+            <ProgressBar Name="HungerBar" Value="100" MinHeight="6" MaxHeight="6"/>
+            
+            <Label Name="RadText" FontColorOverride="#18E298"/>
+            
+            <Label Name="PulseText" FontColorOverride="#18E298"/>
+            
+            <PanelContainer Name="PulseGraphContainer"/>
+            <SpriteView OverrideDirection="South" Name="DollSpriteView" SetSize="96 96"/>
+        </LayoutContainer>
+        
+        <!-- Headers in the monitor bezels (not screen overlay) -->
+        <Label Name="ExperimentLabel" Text="EXPERIMENT" FontColorOverride="#18E298" StyleClasses="LabelHeading"/>
+        <Label Name="StatsLabel" Text="154cm | 18y | #81515" FontColorOverride="#18E298"/>
+        
+        <!-- Close button (the cross in top-right bezel) -->
+        <TextureButton Name="CloseButton" StyleClasses="windowCloseButton"/>
+    </LayoutContainer>
+</implant:ScavImplantWindow>

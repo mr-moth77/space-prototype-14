@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Null",
+    "size": {
+        "x": 159,
+        "y": 271
+    },
+    "states": [
+        {
+            "name": "computerBack"
+        }
+    ]
+}

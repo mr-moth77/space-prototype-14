@@ -13,3 +13,11 @@
   components:
   - type: Implanter
     implant: SelfDiagnosticImplant
+
+- type: entity
+  id: ScavImplanter
+  name: имплантер "имплант жизнеобеспечения Scav"
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: ScavImplant

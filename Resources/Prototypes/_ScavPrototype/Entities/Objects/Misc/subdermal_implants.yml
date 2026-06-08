@@ -56,3 +56,30 @@
       tags:
       - SubdermalImplant
       - HideContextMenu
+
+- type: entity
+  id: ScavImplant
+  name: имплант жизнеобеспечения Scav
+  description: Этот продвинутый имплант собирает и структурирует медицинские показатели организма в стиле Scav.
+  parent: BaseItem
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionOpenScavImplant
+      whitelist:
+        components:
+        - MobState
+    - type: ScavImplant
+    - type: Organ
+      slotId: scavImplant
+    - type: UserInterface
+      interfaces:
+        enum.ScavImplantUiKey.Key:
+          type: ScavImplantBoundUserInterface
+    - type: Tag
+      tags:
+      - SubdermalImplant
+      - HideContextMenu
+    - type: Sprite
+      sprite: _Shitmed/Objects/Augments/arm.rsi # fallback sprite path, user can replace this sprite path later
+      state: base
