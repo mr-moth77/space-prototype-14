@@ -91,7 +91,7 @@
   - Cargo
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, BluespaceLifelineImplant ] 
+    implants: [ MindShieldImplant] 
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
