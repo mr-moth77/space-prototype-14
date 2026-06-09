@@ -142,6 +142,8 @@
     - CandleBlue
     - CandleGreenSmall
 
+#scav-edit
+
 - type: loadout
   id: PlushieMilky
   storage:
