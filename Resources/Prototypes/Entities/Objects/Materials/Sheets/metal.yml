@@ -88,7 +88,6 @@
       Steel: 100
   - type: Stack
     stackType: Steel
-    count: 10
     baseLayer: base
     layerStates:
     - steel
@@ -167,7 +166,6 @@
       Brass: 100
   - type: Stack
     stackType: Brass
-    count: 10
     baseLayer: base
     layerStates:
     - brass
@@ -219,7 +217,6 @@
       Plasteel: 100
   - type: Stack
     stackType: Plasteel
-    count: 10
     baseLayer: base
     layerStates:
     - plasteel
