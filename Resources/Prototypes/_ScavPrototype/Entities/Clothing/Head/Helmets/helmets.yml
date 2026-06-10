@@ -1,0 +1,75 @@
+- type: entity
+  parent: ClothingHeadHelmetBase
+  id: ClothingHeadHelmetKnight
+  name: боевой шлем "Закалённый"
+  description: Штатный боевой шлем пехоты Кованных. Простой, надёжный, симпатичный.
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/Head/Helmets/wbosbattlehelmet.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/Head/Helmets/wbosbattlehelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.40
+        Slash: 0.60
+        Piercing: 0.55
+        Heat: 0.75
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHardsuitLord
+  name: боевой шлем "Молот"
+  description: Штатный офицерский шлем, идущий в комплекте с боевой бронёй с аналогичным названием. Визор, словно созданный из преобразовавшиеся артериальной крови в стекло, внушает тревогу и становится частым гостем во сновидениях пехотинцев.
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/Head/Helmets/wboslordhelmet.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/Head/Helmets/wboslordhelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.30
+        Slash: 0.35
+        Piercing: 0.35
+        Heat: 0.45
+        Caustic: 0.40
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: NightVision
+    color: "#ff0000"
+    flashDurationMultiplier: 0.2
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
+
+- type: entity
+  parent: ClothingHeadHelmetBase
+  id: ClothingHeadHelmetKnightHeavy
+  name: тяжёлый боевой шлем "Грохот"
+  description: Шлем является самой технологичной и дорогой частью всей брони, как минимум за счёт встроенного ПТВ. Стоит отметить, во время штурмовых операций на нём редко остаётся чёрный цвет.
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/Head/Helmets/wbosbattlehelmet.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/Head/Helmets/wbosbattlehelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.20
+        Slash: 0.25
+        Piercing: 0.20
+        Heat: 0.20
+        Radiation: 0.30
+        Caustic: 0.40
+  - type: FireProtection
+    reduction: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: ThermalVision
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5

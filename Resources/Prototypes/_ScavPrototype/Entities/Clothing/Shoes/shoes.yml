@@ -1,0 +1,24 @@
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesBootsKnight
+  name: боевые ботинки
+  description: Высококачественные ботинки Кованых с титановыми вставками, предназначенные обеспечить предельную защиту стоп своего владельца в любых условиях. Однако даже они не спасут ваши стопы от противопехотной мины...
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/Shoes/combatbootsmk2.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/Shoes/combatbootsmk2.rsi
+  - type: Armor
+    coverage:
+    - Foot
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.90
+  - type: StaminaResistance
+    damageCoefficient: 0.70
+  - type: ModifyDelayedKnockdown
+    delayDelta: 0.0
+    knockdownTimeDelta: -1.5
