@@ -1,0 +1,76 @@
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ScavClothingOuterArmorKnight
+  name: боевая броня "Закалённый"
+  description: Общевойсковая боевая броня Кованных, производимая в огромных количествах с недавнего времени в связи с необходимостью создания штатных пехотных подразделений. Весьма неудобная, тяжёлая, но устрашающая и позволяющая пушечному мясу прикрыть своей тушей тяжёлого пехотинца от лишней пули противотанковых винтовок.
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/OuterClothing/Armor/wbosknightarmor.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/OuterClothing/Armor/wbosknightarmor.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Arm
+    - Leg
+    - Foot
+    - Tail
+    modifiers:
+      coefficients:
+        Blunt: 0.50
+        Slash: 0.65
+        Piercing: 0.45
+        Heat: 0.70
+        Caustic: 0.90
+  - type: StaminaResistance
+    damageCoefficient: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ScavClothingOuterArmorKnightHeavy
+  name: тяжёлая боевая броня "Грохот"
+  description: 'Основной военной силой и гордостью Кованых является тяжёлая пехота, прокладывающая себе путь в прорыве на вражескую территорию сотнями трупов, в обороне же, способная удерживать занятые позиции неделями с минимальными потерями. Вместе с первоклассной защитной экипировкой, чей грохот шагов слышен издалека, они снаряжаются продвинутым тяжёлым вооружением - от гранатомётов и ракетниц, до общевойсковых пулемётов и систем Гатлинга, в следствии чего в руки были встроены вспомогательные сервоприводы, облегчающие контроль оружия. На правой нагрудной плите стоит гравировка: "Лафет козлит и ствол ведёт... Но тебя то не спасёт!"'
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/OuterClothing/Hardsuits/WBoSPowerArmor.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/OuterClothing/Hardsuits/WBoSPowerArmor.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Arm
+    - Leg
+    - Foot
+    - Tail
+    modifiers:
+      coefficients:
+        Blunt: 0.20
+        Slash: 0.25
+        Piercing: 0.10
+        Heat: 0.20
+        Radiation: 0.40
+        Caustic: 0.30
+  - type: FireProtection
+    reduction: 0.60
+  - type: StaminaResistance
+    damageCoefficient: 0.30
+  - type: ExplosionResistance
+    damageCoefficient: 0.20
+  - type: ModifyDelayedKnockdown
+    delayDelta: 3.0
+    knockdownTimeDelta: -3.0
+  - type: Reflect
+    reflectProb: 0.30
+  - type: ClothingSpeedModifier
+    walkModifier: 0.60
+    sprintModifier: 0.60
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ScavClothingHeadHelmetKnightHeavy

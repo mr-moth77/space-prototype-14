@@ -1,0 +1,22 @@
+- type: entity
+  parent: ClothingEyesBase
+  id: ScavClothingEyesGlassesKnight
+  name: тактический визор
+  description: Общевойсковой тактический визор Кованых, предназначенный для защиты глаз от ярких вспышек, осколков и погодных условий, что скроет ваши ненаглядные глаза за алой стеной.
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/Eyes/Glasses/wbosrifleglass.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/Eyes/Glasses/wbosrifleglass.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.95
+        Piercing: 0.90
+        Heat: 0.95

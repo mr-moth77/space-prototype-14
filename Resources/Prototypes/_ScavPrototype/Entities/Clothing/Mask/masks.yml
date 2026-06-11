@@ -1,0 +1,20 @@
+- type: entity
+  parent: ClothingMaskGas
+  id: ScavClothingMaskGasKnight
+  name: боевой противогаз
+  description: Общевойсковой противогаз Кованых, предназначенный обеспечить владельца необходимым газом для дыхания в условиях его отсутствия, и также, обеспечить базовую защиту нижней челюсти.
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/Mask/pritifogazbos.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/Mask/pritifogazbos.rsi
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.85
+        Caustic: 0.90
