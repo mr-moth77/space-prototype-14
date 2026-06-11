@@ -39,6 +39,7 @@
   - type: NightVision
     color: "#ff0000"
     flashDurationMultiplier: 0.2
+    isEquipment: true
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -53,9 +54,20 @@
   description: Шлем является самой технологичной и дорогой частью всей брони, как минимум за счёт встроенного ПТВ. Стоит отметить, во время штурмовых операций на нём редко остаётся чёрный цвет.
   components:
   - type: Sprite
-    sprite: _ScavPrototype/Clothing/Head/Helmets/wbosbattlehelmet.rsi
+    sprite: _ScavPrototype/Clothing/Head/Helmets/wboshelmet.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
   - type: Clothing
-    sprite: _ScavPrototype/Clothing/Head/Helmets/wbosbattlehelmet.rsi
+    sprite: _ScavPrototype/Clothing/Head/Helmets/wboshelmet.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: equipped-HELMET-unshaded
+        shader: unshaded
+  - type: Item
+    heldPrefix: off
   - type: Armor
     modifiers:
       coefficients:
@@ -70,6 +82,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.75
   - type: ThermalVision
+    isEquipment: true
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5

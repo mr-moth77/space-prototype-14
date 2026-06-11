@@ -1,6 +1,6 @@
 - type: entity
   name: автомат C70 "Рокот"
-  parent: BaseWeaponRifle
+  parent: BaseWeaponSniper
   id: ScavWeaponRifleC70Rokot
   description: Простой в конструкции, удобный и надёжный в использовании, и что несвойственно для Кованых, вес оружия сравнительно мал. Является штатной автоматической винтовкой пехотных подразделений.
   components:
@@ -15,16 +15,15 @@
     sprite: _ScavPrototype/Objects/Weapon/Guns/Rifles/canadianrifle.rsi
   - type: Gun
     fireRate: 5
-    selectedMode: FullAuto
     availableModes:
       - FullAuto
       - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
     minAngle: 23
     maxAngle: 45
     angleIncrease: 1.2
     angleDecay: 4
-  - type: GunRequiresWield
-  - type: Wieldable
   - type: ChamberMagazineAmmoProvider
     boltClosed: true
   - type: ItemSlots
@@ -46,3 +45,5 @@
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: Appearance
+  - type: GunRequiresWield
+  - type: Wieldable

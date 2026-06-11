@@ -1,6 +1,6 @@
 - type: entity
   name: марксманская винтовка F1 "Цельсия"
-  parent: BaseWeaponRifle
+  parent: BaseWeaponSniper
   id: ScavWeaponSniperF1
   description: Как и всегда, для наиболее эффективного закрытия определённых боевых задач, в каких не автомат, и не пулемёт не в силах сыскать успех в следствии сравнительно низкой точности огня, была разработана полуавтоматическая винтовка со встроенной оптикой, с возможностью стрельбы очередями для успешного поражения целей на средней и дальней дистанциях, при этом, не оставляя стрелка беззащитным в условиях тесного контакта с оппонентом.
   components:
@@ -18,13 +18,12 @@
     - Back
     - suitStorage
   - type: Gun
-    fireRate: 5
-    selectedMode: SemiAuto
+    fireRate: 3
     availableModes:
       - SemiAuto
       - Burst
-    minAngle: 20.5
-    maxAngle: 33
+    minAngle: 5
+    maxAngle: 15
     angleIncrease: 0.2
     angleDecay: 5
   - type: GunRequiresWield
@@ -33,8 +32,6 @@
   - type: EyeCursorOffset
     maxOffset: 8
     pvsIncrease: 0.8
-  - type: Item
-    size: Large
   - type: ChamberMagazineAmmoProvider
     boltClosed: true
   - type: ItemSlots
@@ -51,8 +48,3 @@
         whitelist:
           tags:
             - ScavCartridgeRifle762C70
-  - type: ContainerContainer
-    containers:
-      gun_magazine: !type:ContainerSlot
-      gun_chamber: !type:ContainerSlot
-  - type: Appearance
