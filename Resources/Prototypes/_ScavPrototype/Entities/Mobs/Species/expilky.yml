@@ -101,6 +101,7 @@
   - type: Stamina
     critThreshold: 80 #Canned-Scav / Connection Edit (Original - 60)
     decay: 2.5  #Canned-Scav / Connection Edit (Original - 2.5)
+    cooldown: 4
   - type: Hunger
     baseDecayRate: 0.025
     starvationDamage:

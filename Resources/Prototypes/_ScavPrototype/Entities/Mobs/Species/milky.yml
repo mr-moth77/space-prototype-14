@@ -92,23 +92,38 @@
     damageCap: 80
     damage:
       types:
-        Heat: -0.04
-        Cold: -0.05
-        Shock: -0.02
+        Heat: -0.08
+        Cold: -0.07
+        Shock: -0.04
       groups:
-        Brute: -0.07
-        Toxin: -0.04
+        Brute: -0.1
+        Toxin: -0.07
   - type: Stamina
     critThreshold: 60
     decay: 2.5
+    cooldown: 3
   - type: Hunger
     baseDecayRate: 0.033
     starvationDamage:
       types:
         Bloodloss: 0.7
         Cold: 0.05
+    thresholds:
+      Overfed: 200
+      Goodfed: 160
+      Okay: 120
+      Peckish: 90
+      Starving: 40
+      Dead: 0
   - type: Thirst
     baseDecayRate: 0.17
+    thresholds:
+      OverHydrated: 680
+      HigHydrated: 560
+      Okay: 440
+      Thirsty: 240
+      Parched: 120
+      Dead: 0
 #  - type: ScaleVisuals No use goob
 #    scale: 0.75, 0.75
   - type: ActionGrant

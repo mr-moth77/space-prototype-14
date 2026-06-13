@@ -107,6 +107,7 @@
   - type: Stamina
     critThreshold: 80
     decay: 2.5
+    cooldown: 3.5
   - type: Hunger
     baseDecayRate: 0.033
     starvationDamage:

@@ -54,6 +54,7 @@
   - type: Stamina
     critThreshold: 75
     decay: 2.5
+    cooldown: 3.5
   - type: Fixtures
     fixtures:
       fix1:
