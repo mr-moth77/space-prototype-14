@@ -54,10 +54,19 @@
       0: Alive
       85: Critical
       170: Dead
+  - type: MovementSpeedModifier #Canned-Scav / Connection Edit
+    baseWalkSpeed: 2.75
+    baseSprintSpeed: 5
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7
       70: 0.5
+  - type: Stealth
+    enabledOnCrit: false
+    enabledOnDeath: false
+  - type: StealthOnMove
+    movementVisibilityRate: 0.4
+    passiveVisibilityRate: -1
   - type: Bloodstream
     bloodReagent: YellowBlood
     bloodReferenceSolution:
@@ -96,8 +105,9 @@
         Brute: -0.07
         Toxin: -0.04
   - type: Stamina
-    baseCritThreshold: 80
+    critThreshold: 80
     decay: 2.5
+    cooldown: 3.5
   - type: Hunger
     baseDecayRate: 0.033
     starvationDamage:
