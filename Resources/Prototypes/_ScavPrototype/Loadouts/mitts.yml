@@ -1,7 +1,7 @@
 - type: loadout
   id: MittsBlueWhite
   storage:
-    back: #Арра огузок нормально не сделал. Лооох!!!(Не обижайся пожалуйста я шучу. Лавки тебя❤)
+    back:
     - MittsBlueWhite
   groupBy: "towels"
 
