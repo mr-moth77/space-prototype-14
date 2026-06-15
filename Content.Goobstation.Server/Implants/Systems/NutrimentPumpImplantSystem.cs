@@ -35,11 +35,19 @@ public sealed class NutrimentPumpImplantSystem : EntitySystem
                 if (pumpImplant.NextExecutionTime > _gameTiming.CurTime)
                     continue;
 
-                if (TryComp<HungerComponent>(uid, out var hungerComponent))
+                // scav-edit start
+                if (TryComp<HungerComponent>(uid, out var hungerComponent) &&
+                    _hunger.GetHunger(hungerComponent) < hungerComponent.Thresholds[HungerThreshold.Okay])
+                {
                     _hunger.ModifyHunger(uid, pumpImplant.FoodRate, hungerComponent);
+                }
 
-                if (TryComp<ThirstComponent>(uid, out var thirstComponent))
+                if (TryComp<ThirstComponent>(uid, out var thirstComponent) &&
+                    thirstComponent.CurrentThirst < thirstComponent.ThirstThresholds[ThirstThreshold.Okay])
+                {
                     _thirst.ModifyThirst(uid, thirstComponent, pumpImplant.DrinkRate); // why the fuck is the order of arguments different for ModifyThirst????
+                }
+                // scav-edit end
 
                 pumpImplant.NextExecutionTime = _gameTiming.CurTime + pumpImplant.ExecutionInterval;
             }
