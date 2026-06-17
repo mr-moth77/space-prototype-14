@@ -1,0 +1,9 @@
+- type: selectableSet #scav-edit
+  id: BSOJuggernautSet
+  name: Набор "Джаггернаут" Синего Щита
+  description: В нем находиться тяжелый бронированный скафандр. Для любителей больших пушек среди нас. Стоп, почему он похож на технологии мародёров Горлекса?
+  sprite:
+    sprite: _ScavPrototype/Clothing/OuterClothing/Hardsuits/BlueshieldJuggernautHardsuit.rsi
+    state: icon
+  content:
+    - ClothingOuterHardsuitJuggernautBlueshield

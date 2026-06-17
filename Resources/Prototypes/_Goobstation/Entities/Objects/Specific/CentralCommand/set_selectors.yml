@@ -47,6 +47,7 @@
     possibleSets:
     - BSOHardsuitLightSet
     - BSOModsuitSet
+    - BSOJuggernautSet #scav-edit
     maxSelectedSets: 1
 
 # ERT
