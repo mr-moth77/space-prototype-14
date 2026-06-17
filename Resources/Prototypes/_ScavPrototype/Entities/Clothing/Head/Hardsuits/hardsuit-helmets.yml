@@ -1,0 +1,26 @@
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitJuggernautBlushield
+  name: Шлем скафандра "Джаггернаут" Синего Щита
+  description: Корпус "Синий Щит" гордиться тобой. Не подведи их.
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/Head/Hardsuits/BlueshieldJuggernautHardsuitHelmet.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/Head/Hardsuits/BlueshieldJuggernautHardsuitHelmet.rsi
+  - type: PressureProtection
+  - type: Armor
+    traumaDeductions: # prevents traumas at all (kinda)
+      Dismemberment: 0.8
+      OrganDamage: 0.8
+      BoneDamage: 0.8
+      VeinsDamage: 0.8
+      NerveDamage: 0.8
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.4
+        Radiation: 0.5
+        Caustic: 0.5

@@ -42,3 +42,40 @@
   - type: ToggleableClothing
     clothingPrototypes:
       head: ScavClothingHeadHardsuitLord
+
+
+- type: entity
+  parent: [ ClothingOuterHardsuitBase, BaseCentcommContraband ]
+  id: ClothingOuterHardsuitJuggernautBlueshield
+  name: Скафандр "Джаггернаут" Синего Щита
+  description: Ещё одна украденная у Cybersun технология. Переделанная для использования корпусом "Синий Щит"
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Clothing/OuterClothing/Hardsuits/BlueshieldJuggernautHardsuit.rsi
+  - type: Clothing
+    sprite: _ScavPrototype/Clothing/OuterClothing/Hardsuits/BlueshieldJuggernautHardsuit.rsi
+  - type: PressureProtection
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHelmetHardsuitJuggernautBlushield
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.65
+    sprintModifier: 0.65
+  - type: HeldSpeedModifier
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+  - type: StaminaResistance # Goobstation uncommented
+    damageCoefficient: 0.75
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.25
+        Radiation: 0.5
+        Caustic: 0.5
