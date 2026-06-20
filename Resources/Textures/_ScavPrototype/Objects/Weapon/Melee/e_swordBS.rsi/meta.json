@@ -1,0 +1,24 @@
+{
+   "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "e_saberBS"
+    },
+	{
+      "name": "e_saberBS_blade",
+      "delays": [
+        [
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}
+

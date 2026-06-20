@@ -1,0 +1,9 @@
+- type: selectableSet
+  id: BSOSwordBlueshield
+  name: Энергетический Меч Офицера "Синий Щит"
+  description: Содержит в себе Энергетический Фороновый Меч. Способен отражать пули.
+  sprite:
+    sprite: _ScavPrototype/Objects/Weapon/Melee/e_swordBS.rsi
+    state: icon
+  content:
+   - EnergySaberBlueshield

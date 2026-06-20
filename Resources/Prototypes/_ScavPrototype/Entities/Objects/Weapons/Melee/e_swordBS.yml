@@ -1,0 +1,69 @@
+- type: entity
+  name: Энергетический фороновый Меч Офицера "Синий Щит"
+  parent: [BaseMeleeWeaponEnergy, BaseCentcommContraband]
+  id: EnergySaberBlueshield
+  description: Шумный и громкий Энергетический Меч. Специально разработан для использования Офицером "Синий Щит" на основе форона. Способен отражать не только энергитические снаряды, а также и пули. Форон сделает нас всех богатыми!
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Objects/Weapon/Melee/e_swordBS.rsi
+    layers:
+    - state: e_saberBS
+    - state: e_saberBS_blade
+      color: "#000096"
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+
+  - type: ItemToggle
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+      params:
+        variation: 0.250
+    soundActivate:
+      path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyon.ogg
+    soundDeactivate:
+      path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyoff.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyhum.ogg
+
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/eblademiss.ogg
+      params:
+        variation: 0.125
+    activatedDamage:
+      types:
+        Slash: 15
+        Heat: 10
+      armorPenetration: 0.2
+
+  - type: Item
+    sprite: _ScavPrototype/Objects/Weapon/Melee/e_swordBS_inhand.rsi
+  - type: Reflect
+    reflectProb: 0.25
+    reflects:
+    - Energy
+    - NonEnergy
+  - type: Tag
+    tags:
+    - EnergySword
+  - type: ThrowableBlocker
+    blockSound:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+        volume: -2
+
+  - type: Sharp
+  - type: Execution # Off with his head!
+    doAfterDuration: 4.0
