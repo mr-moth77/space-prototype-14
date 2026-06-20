@@ -52,6 +52,10 @@
     - Speciman
     - Milky
     - Orange
+    - Voyager
+    - Velvet
+    - Roza
+    - Expilky
 
 
 - type: guideEntry
@@ -169,3 +173,22 @@
   name: Альбино
   text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Albino.xml"
 
+- type: guideEntry
+  id: Voyager
+  name: Вояджер
+  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Voyager.xml"
+
+- type: guideEntry
+  id: Velvet
+  name: Вельвет
+  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Velvet.xml"
+
+- type: guideEntry
+  id: Roza
+  name: Роза
+  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Roza.xml"
+
+- type: guideEntry
+  id: Expilky
+  name: Экспилки
+  text: "/ServerInfo/_ScavPrototype/Guidebook/Mobs/Expilky.xml"
