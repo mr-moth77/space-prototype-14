@@ -95,7 +95,7 @@
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 80
+    damageCap: 85
     damage:
       types:
         Heat: -0.04
@@ -105,7 +105,7 @@
         Brute: -0.07
         Toxin: -0.04
   - type: Stamina
-    critThreshold: 80
+    critThreshold: 85
     decay: 2.5
     cooldown: 3.5
   - type: Hunger

@@ -45,13 +45,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Box>
     <GuideEntityEmbed Entity="MobShadowkin" Caption="Тенекин"/>
   </Box>
-  <GuideEntityEmbed Entity="MobAlbino" Caption="Альбино"/>
-  <GuideEntityEmbed Entity="MobMilky" Caption="Милки"/>
-  <GuideEntityEmbed Entity="MobDune" Caption="Дюна"/>
-  <GuideEntityEmbed Entity="MobSpeciman" Caption="Эксперимент"/>
+  <Box>
+    <GuideEntityEmbed Entity="MobAlbino" Caption="Альбино"/>
+    <GuideEntityEmbed Entity="MobMilky" Caption="Милки"/>
+    <GuideEntityEmbed Entity="MobDune" Caption="Дюна"/>
+    <GuideEntityEmbed Entity="MobSpeciman" Caption="Эксперимент"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="MobOrange" Caption="Орандж"/>
+    <GuideEntityEmbed Entity="MobOrange" Caption="Орандж"/>
+    <GuideEntityEmbed Entity="MobVoyager" Caption="Вояджер"/>
+    <GuideEntityEmbed Entity="MobVelvet" Caption="Вельвет"/>
+    <GuideEntityEmbed Entity="MobRoza" Caption="Роза"/>
+    <GuideEntityEmbed Entity="MobExpilky" Caption="Экспилки"/>
   </Box>
 
 </Document>
