@@ -1,5 +1,8 @@
 {
-   "size": {
+  "version": 1,
+  "license": "CC-BY-NC-SA 3.0",
+  "copyright": "mr.moth._ ❤️",
+  "size": {
     "x": 32,
     "y": 32
   },

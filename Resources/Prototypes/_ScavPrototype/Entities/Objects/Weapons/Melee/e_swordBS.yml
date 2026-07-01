@@ -13,7 +13,6 @@
       visible: false
       shader: unshaded
       map: [ "blade" ]
-
   - type: ItemToggle
     soundFailToActivate:
       path: /Audio/Machines/button.ogg
@@ -26,7 +25,6 @@
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyhum.ogg
-
   - type: ItemToggleMeleeWeapon
     activatedSoundOnHit:
       path: /Audio/Weapons/eblade1.ogg
@@ -46,7 +44,6 @@
         Slash: 15
         Heat: 10
       armorPenetration: 0.2
-
   - type: Item
     sprite: _ScavPrototype/Objects/Weapon/Melee/e_swordBS_inhand.rsi
   - type: Reflect
@@ -63,7 +60,6 @@
       params:
         variation: 0.250
         volume: -2
-
   - type: Sharp
   - type: Execution # Off with his head!
     doAfterDuration: 4.0
